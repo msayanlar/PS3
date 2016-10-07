@@ -10,7 +10,7 @@ public class Account {
 	private double annualInterestRate;
 	private Date  dateCreated;
 	
-	public Account(){//
+	public Account(){
 	
 		id=0;
 		balance=0.0;
@@ -37,8 +37,8 @@ public class Account {
 		return balance;
 	}
 
-	public void setBalance(double balance) {
-		this.balance = balance;
+	public void setBalance(double InitialBalance) {
+		this.balance = InitialBalance;
 	}
 
 	public double getAnnualInterestRate() {
