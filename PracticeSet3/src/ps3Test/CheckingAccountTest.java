@@ -1,23 +1,26 @@
 package ps3Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
-
+import org.junit.Before;
 import org.junit.Test;
+
 import ps3.Account;
 
 
 public class CheckingAccountTest {
 
 	
+	private Account TesterAccount=new Account();
 	
-	@Test
-	public void DefaultAcount(){
-		Account defaultAccount = new Account();
-		assertTrue(Account().getBalance==0);
-		assertTrue(Account().getId==0);
-		assertTrue(Account().getAnnualInterestRate==0);
+	@Before
+	public void setUp() throws Exception {
+		TesterAccount.setId(1122);
+		TesterAccount.setBalance(20000);
+		TesterAccount.setAnnualInterestRate(4.5);
 	}
+	
 	
 	@Test
 	public void WithdrawlTest(){
@@ -42,10 +45,10 @@ public class CheckingAccountTest {
 	@Test
 	public void Account(){
 		Account balance  = new Account(1122, 20000);
-		setAnnualInterestRate(4.5);
+		balance.setAnnualInterestRate(4.5);
 		assertEquals(balance.withdraw(2500), 17500,.01);
 		assertEquals(balance.deposit(3000), 20500,.01);
-		assertEquals(.375,Account.getMonthlyInterestRate(),.01);
+		assertEquals(.375,balance.getMonthlyInterestRate(0),.01);
 		System.out.println(balance.getBalance());
 		System.out.println(balance.getMonthlyInterestRate(4.5) );
 		System.out.println(balance.getDateCreated());

@@ -15,12 +15,13 @@ public class Account {
 		id=0;
 		balance=0.0;
 		annualInterestRate=0.0;
+		dateCreated=new Date();
 	}
 		
 	public Account(int newId, double InitialBalance){
 		id=newId;
 		balance=InitialBalance;
-		
+		dateCreated=new Date();
 	}
 
 	
