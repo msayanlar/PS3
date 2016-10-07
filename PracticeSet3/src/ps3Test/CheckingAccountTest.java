@@ -14,7 +14,9 @@ public class CheckingAccountTest {
 	@Test
 	public void DefaultAcount(){
 		Account defaultAccount = new Account();
-		
+		assertTrue(Account().getBalance==0);
+		assertTrue(Account().getId==0);
+		assertTrue(Account().getAnnualInterestRate==0);
 	}
 	
 	@Test
